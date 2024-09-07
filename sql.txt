@@ -1,0 +1,19 @@
+CREATE TABLE departamento (
+    id_departamento SERIAL PRIMARY KEY,
+    nome TEXT NOT NULL
+);
+
+CREATE TABLE curso (
+    id_curso SERIAL PRIMARY KEY,
+    nome TEXT NOT NULL,
+    id_departamento INTEGER,
+    FOREIGN KEY (id_departamento) REFERENCES departamento (id_departamento) ON DELETE CASCADE
+);
+
+CREATE TABLE aluno (
+    id_aluno SERIAL PRIMARY KEY,
+    nome TEXT NOT NULL,
+    idade INTEGER,
+    id_curso INTEGER,
+    FOREIGN KEY (id_curso) REFERENCES curso (id_curso) ON DELETE CASCADE
+);
