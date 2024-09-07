@@ -9,16 +9,16 @@ public class Main {
             Aluno aluno = new Aluno("Davi Alves", 20, 1);
             alunoDAO.addAluno(aluno);
 
-            alunoDAO.updateAluno(18, "Davi de Oliveira", 21, 1);
+            alunoDAO.updateAluno(21, "Davi de Oliveira", 21, 1);
 
-            Aluno buscado = alunoDAO.getAluno(18);
+            Aluno buscado = alunoDAO.getAluno(21);
             if (buscado != null) {
                 System.out.println("Aluno buscado: " + buscado.getNome());
             } else {
                 System.out.println("Aluno não encontrado.");
             }
 
-            alunoDAO.removeAluno(18);
+            alunoDAO.removeAluno(21);
 
             List<Aluno> alunos = List.of(
                     new Aluno("Beatriz Vasconcelos", 22, 1),
