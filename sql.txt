@@ -17,3 +17,9 @@ CREATE TABLE aluno (
     id_curso INTEGER,
     FOREIGN KEY (id_curso) REFERENCES curso (id_curso) ON DELETE CASCADE
 );
+
+INSERT INTO departamento (nome) VALUES ('Ciências Exatas');
+INSERT INTO departamento (nome) VALUES ('Humanidades');
+
+INSERT INTO curso (nome, id_departamento) VALUES ('Ciência da Computação', (SELECT id_departamento FROM departamento WHERE nome = 'Ciências Exatas'));
+INSERT INTO curso (nome, id_departamento) VALUES ('Matemática', (SELECT id_departamento FROM departamento WHERE nome = 'Ciências Exatas'));
